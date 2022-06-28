@@ -52,8 +52,10 @@ def proceso():
     df2021_2 = df2021_2.drop_duplicates()
     merge = avance.merge(df2021_2,left_on="idestablecimiento",right_on="idestablecimiento")
 
+    merge["Año"] = 2022
+    merge.to_excel("data/data_urgencia_2022.xlsx", index=False)
+    print("Estamos...")
     
-    merge.to_excel("avance.xlsx", index=False)
     """
     print("Referencia")
     print(ref.columns)
