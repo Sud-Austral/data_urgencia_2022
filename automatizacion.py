@@ -44,7 +44,7 @@ def proceso():
             
     del avance["Semana 52"]
     
-    ref = pd.read_excel(r"Homologa_Causa-Urgencia.xlsx")
+    ref = pd.read_excel(r"https://raw.githubusercontent.com/Sud-Austral/URGENCIA_DATA_ACTION/main/ref/Homologa_Causa-Urgencia.xlsx")
     print("Referencia")
     print(ref.columns)
     print("Avance")
