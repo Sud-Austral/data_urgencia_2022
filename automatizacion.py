@@ -43,8 +43,16 @@ def proceso():
             avance = avance.merge(dfaux, left_on=["idestablecimiento","Idcausa"],right_on=["idestablecimiento","Idcausa"], how="left",validate="one_to_one")
             
     del avance["Semana 52"]
-    avance.to_excel("avance.xlsx", index=False)
+    
+    ref = pd.read_excel(r"Homologa_Causa-Urgencia.xlsx")
+    avance = avance.merge(ref, left_on="Idcausa", right_on="Idcausa", how="inner")
+    df2021_2 = df[['idestablecimiento','GLOSATIPOESTABLECIMIENTO', 'GLOSATIPOATENCION',
+       'GlosaTipoCampana']]
+    df2021_2 = df2021_2.drop_duplicates()
+    merge = avance.merge(df2021_2,left_on="idestablecimiento",right_on="idestablecimiento")
+
     os.remove("AtencionesUrgencia2022.csv")
+    merge.to_excel("avance.xlsx", index=False)
     return
 
 if __name__ == '__main__':
