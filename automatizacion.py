@@ -45,11 +45,6 @@ def proceso():
     del avance["Semana 52"]
     
     ref = pd.read_excel(r"https://raw.githubusercontent.com/Sud-Austral/URGENCIA_DATA_ACTION/main/ref/Homologa_Causa-Urgencia.xlsx")
-    print("Referencia")
-    print(ref.columns)
-    print("Avance")
-    print(avance.columns)
-    """
     
     avance = avance.merge(ref, left_on="Idcausa", right_on="Idcausa", how="inner")
     df2021_2 = df[['idestablecimiento','GLOSATIPOESTABLECIMIENTO', 'GLOSATIPOATENCION',
@@ -59,6 +54,11 @@ def proceso():
 
     
     merge.to_excel("avance.xlsx", index=False)
+    """
+    print("Referencia")
+    print(ref.columns)
+    print("Avance")
+    print(avance.columns)    
     """
     os.remove("AtencionesUrgencia2022.csv")
     return
