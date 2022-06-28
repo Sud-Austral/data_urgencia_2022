@@ -45,6 +45,7 @@ def proceso():
     del avance["Semana 52"]
     
     ref = pd.read_excel(r"Homologa_Causa-Urgencia.xlsx")
+    """
     print("Referencia")
     print(ref.columns)
     print("Avance")
@@ -57,6 +58,7 @@ def proceso():
 
     os.remove("AtencionesUrgencia2022.csv")
     merge.to_excel("avance.xlsx", index=False)
+    """
     return
 
 if __name__ == '__main__':
