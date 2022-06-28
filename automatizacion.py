@@ -56,9 +56,10 @@ def proceso():
     df2021_2 = df2021_2.drop_duplicates()
     merge = avance.merge(df2021_2,left_on="idestablecimiento",right_on="idestablecimiento")
 
-    os.remove("AtencionesUrgencia2022.csv")
+    
     merge.to_excel("avance.xlsx", index=False)
     """
+    os.remove("AtencionesUrgencia2022.csv")
     return
 
 if __name__ == '__main__':
